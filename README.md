@@ -9,3 +9,5 @@ Agradecimentos ao Exército Brasileiro, em especial ao Departamento de Ciência 
 
 
 BRASIL ACIMA DE TUDO!
+
+Maiores informaçes em: http://www.cienciasgeodesicas.ufpr.br/spgg/.
