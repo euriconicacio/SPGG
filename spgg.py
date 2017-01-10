@@ -10,7 +10,7 @@
         Input: XLS file with formatted data (id, lat, long, height)
         Output: XLS file with GGM funcionals calculated for each point
         
-        Help: http://www.cienciasgeodesicas.ufpr.br/spgg/ajuda
+        Help: http://www.cienciasgeodesicas.ufpr.br/spgg/help
         
         "Talk is cheap. Show me the code." - Linus Torvalds
  ***************************************************************************/
