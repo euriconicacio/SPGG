@@ -4,7 +4,7 @@
         
                               -------------------
         begin                : 2016
-        copyright            : (C) 2014 by Luiz Andrade - Cartographic Engineer @ Brazilian Army
+        copyright            : (C) 2016 by Eurico Nicacio - Cartographic Engineer @ Brazilian Army / MSc Candidate @ UFPR
         email                : euriconicaciojr@gmail.com
         
         Input: XLS file with formatted data (id, lat, long, height)
