@@ -29,5 +29,5 @@ Eurico Lourenço Nicacio Junior (nCKbr) - Coffee, Code, Nap, Repeat
 
 ## License
 
-SPGG is released under an MIT license (see LICENSE.txt).
+SPGG is released under an MIT license (see [LICENSE.txt](https://github.com/euriconicacio/SPGG/blob/master/license.txt)).
 
