@@ -4,7 +4,8 @@ SPGG is a standalone application that enables the user to generate multiple poin
 
 ## Requirements, Installation, Usage and Help
 
-Visit: http://www.cienciasgeodesigas.ufpr.br/spgg/ajuda/
+Brief requirements: see [REQUIREMENTS.md](https://github.com/euriconicacio/SPGG/blob/master/requirements.md).
+Futher information: visit http://www.cienciasgeodesigas.ufpr.br/spgg/ajuda/
 
 ## Contributing
 
