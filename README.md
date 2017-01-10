@@ -27,7 +27,7 @@ The **Single-Point GEM (Global Earth Models) Generator [SPGG]** was developed by
 
 ## Credits
 
-Eurico Lourenço Nicacio Junior (nCKbr) - Coffee, Code, Nap, Repeat
+Eurico Lourenço Nicacio Junior (nCKbr) - Coffee, Code, Nap, Repeat.
 
 ## License
 
