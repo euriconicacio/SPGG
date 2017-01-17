@@ -592,7 +592,6 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     
     # Reference System
     ref = Select(browser.find_element_by_id('refsys'))
-    #ref.select_by_visible_text('GRS80')
     ref.select_by_visible_text(sisref)
     
     # Grid Step
@@ -603,25 +602,21 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     # Longitude Limit West
     longlimit_west = browser.find_element_by_id('longlimit_west')
     longlimit_west.clear()
-    #longlimit_west.send_keys('-49.2374303888889')
     longlimit_west.send_keys(str(lon))
     
     # Longitude Limit East
     longlimit_east = browser.find_element_by_id('longlimit_east')
     longlimit_east.clear()
-    #longlimit_east.send_keys('-49.2374303888889')
     longlimit_east.send_keys(str(lon))
     
     # Latitude Limit South
     latlimit_south = browser.find_element_by_id('latlimit_south')
     latlimit_south.clear()
-    #latlimit_south.send_keys('-25.4555288333333')
     latlimit_south.send_keys(str(lat))
     
     # Latitude Limit North
     latlimit_north = browser.find_element_by_id('latlimit_north')
     latlimit_north.clear()
-    #latlimit_north.send_keys('-25.4555288333333')
     latlimit_north.send_keys(str(lat))
     
     # Height over Ellipsoid
@@ -640,9 +635,9 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     # ENTER
     start = browser.find_element_by_id('start_but')
     start.send_keys(Keys.ENTER)
-    # clica GRID
     
-    element = WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.ID, 'get_but')))
+    # clica GRID
+    element = WebDriverWait(browser, 30).until(EC.element_to_be_clickable((By.ID, 'get_but')))
     element.click()
     browser.switch_to_window(browser.window_handles[1])
     try:
@@ -663,20 +658,21 @@ def gera_modelos(fileName, dire, modelo, func, mare, gzero, sisref, grau):
     i = 0
     pontos = le_xls(fileName,0)
     numrows = len(pontos)
-    d = conv_tempo(10*numrows)
+    d = conv_tempo(20*numrows)
     ui.label_tempoestimado.setText(str(d))
     ui.label_pontos.setText("0 of "+str(len(pontos)))
     geo = [[0 for x in range(2)] for y in range(numrows)]
     Form2.move(350,150)
     Form2.show()
+    inicio = time.time()
     while i < numrows:
         ui.progresso.setValue(i*100/len(pontos))
         ui.label_pontos.setText(str(i+1)+" of "+str(len(pontos)))
-        d = conv_tempo(10*(i+1))
-        ui.label_tempotranscorrido.setText(str(d))
-        geo[i][0] = i+1
+        geo[i][0] = pontos[i][0]
         geo[i][1] = gera_grid_ponto(dire,modelo,func,mare,gzero,sisref,pontos[i][1],pontos[i][2],pontos[i][3],grau)
         escreve_lista_arq('temp.txt',geo[i])
+        d = conv_tempo(int(float(time.time())-(float(inicio))))
+        ui.label_tempotranscorrido.setText(str(d))
         i+=1
     Form2.hide()
     grava_xls(gera_nome_saida(fileName),geo,1,2)
