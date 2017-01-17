@@ -1,21 +1,3 @@
-"""
-/***************************************************************************
-        SPGG - Single Point GEM Generator
-        
-                              -------------------
-        begin                : 2016
-        copyright            : (C) 2016 by Eurico Nicacio - Cartographic Engineer @ Brazilian Army / MSc Candidate @ UFPR
-        email                : euriconicaciojr@gmail.com
-        
-        Input: XLS file with formatted data (id, lat, long, height)
-        Output: XLS file with GGM funcionals calculated for each point
-        
-        Help: http://www.cienciasgeodesicas.ufpr.br/spgg/help
-        
-        "Talk is cheap. Show me the code." - Linus Torvalds
- ***************************************************************************/
- """
-
 import os
 import sys
 import time
@@ -32,6 +14,7 @@ from selenium.webdriver.support.ui import Select
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtGui import *
 from PyQt5.QtCore import *
@@ -276,7 +259,7 @@ class Ui_Loading(object):
     def retranslateUi(self, Loading):
         _translate = QtCore.QCoreApplication.translate
         Loading.setWindowTitle(_translate("Loading", "Single-Point GEM Generator"))
-        self.label.setText(_translate("Loading", "Updating options... This may take several minutes..."))
+        self.label.setText(_translate("Loading", "Loading..."))
 
 def verifica_arq():
     if ((fileName == '') or ((fileName[-3:] != 'xls') and (fileName[-4:] != 'xlsx'))):
@@ -388,9 +371,6 @@ def le_combo(nome):
     
     return lista
 
-def pausa(num):
-    for i in range(0,num,1):
-        time.sleep(1)
         
 def gera_nome_saida(nome_arq):
     if (nome_arq[-3:] == 'xls') or (nome_arq[-3:] == 'odt'):
@@ -464,6 +444,8 @@ def preenche_modelos():
                 pass
             if k==666:
                 break
+        #print (val)
+        #print (len(val))
         ui.modelo.addItems(val)
         muda_ext('data.xls')
 
@@ -557,7 +539,7 @@ def atualiza_op():
         if(testa_con()):
             Form2.move(350,150)
             Form2.show()
-            pausa(1)
+            time.sleep(1)
             muda_ext('data.sp0')
             grava_xls('data.xls',le_combo('model_directory'),0,1)
             grava_xls('data.xls',le_combo('model_file'),1,1)
@@ -595,18 +577,22 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     
     # Functional
     functional = Select(browser.find_element_by_id('functional'))
+    #functional.select_by_visible_text('geoid')
     functional.select_by_visible_text(func)
     
     # Tide System
     tide = Select(browser.find_element_by_id('tide_system'))
+    #tide.select_by_visible_text('tide_free')
     tide.select_by_visible_text(mare)
     
     # Zero Degree Term
     zerodeg = Select(browser.find_element_by_id('zero_degree_term'))
+    #zerodeg.select_by_visible_text('yes')
     zerodeg.select_by_visible_text(gzero)
     
     # Reference System
     ref = Select(browser.find_element_by_id('refsys'))
+    #ref.select_by_visible_text('GRS80')
     ref.select_by_visible_text(sisref)
     
     # Grid Step
@@ -617,27 +603,31 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     # Longitude Limit West
     longlimit_west = browser.find_element_by_id('longlimit_west')
     longlimit_west.clear()
+    #longlimit_west.send_keys('-49.2374303888889')
     longlimit_west.send_keys(str(lon))
     
     # Longitude Limit East
     longlimit_east = browser.find_element_by_id('longlimit_east')
     longlimit_east.clear()
+    #longlimit_east.send_keys('-49.2374303888889')
     longlimit_east.send_keys(str(lon))
     
     # Latitude Limit South
     latlimit_south = browser.find_element_by_id('latlimit_south')
     latlimit_south.clear()
+    #latlimit_south.send_keys('-25.4555288333333')
     latlimit_south.send_keys(str(lat))
     
     # Latitude Limit North
     latlimit_north = browser.find_element_by_id('latlimit_north')
     latlimit_north.clear()
+    #latlimit_north.send_keys('-25.4555288333333')
     latlimit_north.send_keys(str(lat))
     
     # Height over Ellipsoid
-    h = browser.find_element_by_id('height_over_ell')
-    h.clear()
-    h.send_keys(str(h))
+    hei = browser.find_element_by_id('height_over_ell')
+    hei.clear()
+    hei.send_keys(str(h))
     
     # Maximal Degree
     max_grau = browser.find_element_by_id('max_used_degree')
@@ -650,24 +640,30 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     # ENTER
     start = browser.find_element_by_id('start_but')
     start.send_keys(Keys.ENTER)
+    # clica GRID
     
     element = WebDriverWait(browser, 20).until(EC.element_to_be_clickable((By.ID, 'get_but')))
     element.click()
-    pausa(10)
     browser.switch_to_window(browser.window_handles[1])
-    a = browser.page_source.encode('utf-8')[-41:-21]
+    try:
+        element_present = EC.presence_of_element_located((By.XPATH, '//pre'))
+        WebDriverWait(browser, 30).until(element_present)
+        a = browser.page_source.encode('utf-8')[-36:-21]
+        browser.quit()
+        display.stop()
+        return float(a.strip())
+    except TimeoutException:
+        print("Internet issues. Please, try again.")
+        return False
     
-    browser.quit()
-    display.stop()
     
-    return float(a.strip())
-
+    
 def gera_modelos(fileName, dire, modelo, func, mare, gzero, sisref, grau):
     global SAIDA
     i = 0
     pontos = le_xls(fileName,0)
     numrows = len(pontos)
-    d = conv_tempo(20*numrows)
+    d = conv_tempo(10*numrows)
     ui.label_tempoestimado.setText(str(d))
     ui.label_pontos.setText("0 of "+str(len(pontos)))
     geo = [[0 for x in range(2)] for y in range(numrows)]
@@ -676,12 +672,11 @@ def gera_modelos(fileName, dire, modelo, func, mare, gzero, sisref, grau):
     while i < numrows:
         ui.progresso.setValue(i*100/len(pontos))
         ui.label_pontos.setText(str(i+1)+" of "+str(len(pontos)))
-        d = conv_tempo(20*(i+1))
+        d = conv_tempo(10*(i+1))
         ui.label_tempotranscorrido.setText(str(d))
         geo[i][0] = i+1
         geo[i][1] = gera_grid_ponto(dire,modelo,func,mare,gzero,sisref,pontos[i][1],pontos[i][2],pontos[i][3],grau)
         escreve_lista_arq('temp.txt',geo[i])
-        #pausa(1)
         i+=1
     Form2.hide()
     grava_xls(gera_nome_saida(fileName),geo,1,2)
