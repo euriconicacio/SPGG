@@ -643,7 +643,7 @@ def gera_grid_ponto(dire, modelo, func, mare, gzero, sisref, lat, lon, h, grau):
     try:
         element_present = EC.presence_of_element_located((By.XPATH, '//pre'))
         WebDriverWait(browser, 30).until(element_present)
-        a = browser.page_source.encode('utf-8')[-36:-21]
+        a = browser.page_source.encode('utf-8')[-40:-21]
         browser.quit()
         display.stop()
         return float(a.strip())
