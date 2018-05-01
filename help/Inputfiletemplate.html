@@ -1,0 +1,130 @@
+﻿<html>
+	
+<head>
+	<title>Input file template</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "SPGG 2.0 Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Inputfiletemplate");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Input file template</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="GettingStarted.html">Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="SPGGOperation.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Outputfilepattern.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><span class="rvts20">SPGG v2.0</span></p>
+<p class="rvps3"><span class="rvts21"><br/></span></p>
+<p class="rvps3"><span class="rvts21">Getting Started</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps3"><span class="rvts17">Input file template</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">For a proper working of SPGG, it is necessary that the input data are correctly arranged in the input file, following the input file template. It is only accepted "</span><span class="rvts23">.xls</span><span class="rvts18">" input file formats with the following formatting:</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Column #1 - Id</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18">Id number. It is suggested the usage of sequential numbering started in 1 (e.g.: 1, 2, 3, ...) or any numerical codes as desired by the user.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Column #2 - Points latitude in decimal degrees</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18">It is necessary to include the signal and as much decimal places as possible in order to determining results with equivalent precision (e.g.: -25.455528833)</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Column #3 - Points longitude in decimal degrees</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18">It is necessary to include the signal and as much decimal places as possible in order to determining results with equivalent precision (e.g.: -49.237430388)</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Column #4 - Elipsoidal height or "</span><span class="rvts23">Height over ellipsoid</span><span class="rvts18">", in meters.</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18">This field is not necessary for "</span><span class="rvts23">geoid</span><span class="rvts18">" functional, being requested only for all the other functionals, in meters (e.g.: 911.134).</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><img width="39" height="35" alt="" style="vertical-align: middle; padding : 1px;" src="lib/NewItem1.png"><span class="rvts33"> </span><span class="rvts30">WARNING! IMPORTANT!</span><span class="rvts32"> - </span><span class="rvts31">PRECAUTIONS WITH THE INPUT FILE FORMAT</span></p>
+<p class="rvps7"><span class="rvts31"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts31">Do not</span><span class="rvts32"> insert a header line! Type directly the points information, as follows in figure 16:</span></li>
+</ol></ol>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps10"><img alt="" style="padding : 1px;" src="lib/NewItem2.png"></p>
+<p class="rvps10"><span class="rvts34">Figura 16 - Exemplo de arquivo de entrada.</span></p>
+<p class="rvps8"><span class="rvts32"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="2" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts31">Do not</span><span class="rvts32"> use non-numeric characters to fill in the points Id in the first column;</span></li>
+<li value="3" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts32">Do not leave blank lines/spaces between the filled lines;</span></li>
+<li value="4" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts32">Use dot (".") as a decimal places separator, do not use comma (",");</span></li>
+<li value="5" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts32">Use just one spreadsheet file to as much points as you need.</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts32"><br/></span></p>
+<p class="rvps7"><span class="rvts18">A input file template can be downloaded in the following link: </span><span class="rvts24">Input File Tempalte</span><span class="rvts18">.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts27">In case of problems with formatting the input file, please send and e-mail to </span><a class="rvts29" href="mailto:euriconicaciojr@gmail.com?subject=SPGG%20-%20Problema%20-%20Download%20e%20Instala&ccedil;&atilde;o">euriconicaciojr@gmail.com</a><span class="rvts27"> with the subject "</span><span class="rvts28">SPGG - Issue - Input file </span><span class="rvts28">template</span><span class="rvts27">".</span></p>
+<p></p>
+<p class="rvps5"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="http://www.helpndoc.com/feature-tour">Easily create Help documents</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by Eurico Nicacio. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

@@ -1,0 +1,94 @@
+﻿<html>
+	
+<head>
+	<title>O SPGG</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "SPGG 2.0 Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("OSPGG");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">O SPGG</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="Introduction.html">Introduction</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="Introduction.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="Introduction.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="GettingStarted.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><span class="rvts20">SPGG v2.0</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps3"><span class="rvts17">Introduction</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps3"><img width="143" height="148" alt="" style="padding : 1px;" src="lib/icon.png"></p>
+<p class="rvps3"><span class="rvts17">Single-Point GEM [Global Earth Models] Generator - version 2.0</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps7"><span class="rvts18">Nowadays, Geodesy community has been using Global Geopotential Models as a tool for various purposes, such as determination of geoid heights, gravity and height anomalies. Due to their complexity of obtainment, based on treating geopotential and its derivatives through spherical harmonics, and to the need for standardization of these models, their management and provision are held globally by ICGEM - International Centre for Global Earth Models. </span></p>
+<p class="rvps7"><span class="rvts18">It is an organization linked to the IAG that, among other activities, provides a web service to generate extracts (or grids) of functionals of these models. The user needs to enter information required for specification of the interest area, such as the boundaries of north and south latitude, the limits of west and east longitudes and the size of the grid unit (grid step). The grid generation is carried out in form of area, following the grid modeling on a reference ellipsoid and with the support of a free software to perform data processing techniques, among which can be highlighted filtering, trend fitting and gridding. However, depending on the application and the required precision for the result, a calculation of the grid shaped functional and its subsequent interpolation at internal points of interest of the calculated area provides results far behind those obtained through a point-to-point approach of the same functional - despite this option is not covered by the ICGEM web service. An alternative commonly employed by experts in the area, besides the possibility of developing algorithms based on the coefficients of the models, is performing contact with ICGEM authorities and requesting a precise point-to-point calculation, taken the information from points of interest and model specifications to be used. </span></p>
+<p class="rvps7"><span class="rvts18">Aiming to shorten this task, it was developed the </span><span class="rvts19">Single-Point GEM Generator [SPGG]</span><span class="rvts18">, a standalone application that can generate extracts of Global Geopotential Models in a pointwise manner, using a list of points drawn up and formatted by the user, the model specifications and a direct interaction with the web service. The analysis of the extracts generated from this application when applied on IBGE geodetic database points shows that it provides the same results as those calculated point-to-point by ICGEM, being both of them better suited than the results generated by an interpolation of area extracts obtained by the web service. Thus, the standalone application proves to be an excellent alternative for situations in which high precision of the results is required.</span></p>
+<p class="rvps6"><span class="rvts6"><br/></span></p>
+<p></p>
+<p class="rvps5"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="http://www.helpndoc.com/help-authoring-tool">Single source CHM, PDF, DOC and HTML Help creation</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by Eurico Nicacio. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

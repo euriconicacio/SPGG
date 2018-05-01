@@ -1,0 +1,108 @@
+﻿<html>
+	
+<head>
+	<title>System Requirements</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "SPGG 2.0 Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("SystemRequirements");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">System Requirements</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="GettingStarted.html">Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="GettingStarted.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="DownloadandInstallation.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><span class="rvts20">SPGG v2.0</span></p>
+<p class="rvps3"><span class="rvts21"><br/></span></p>
+<p class="rvps3"><span class="rvts21">Getting Started</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps3"><span class="rvts17">System Requirements</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">SPGG was developed in Python programming language, with the main objective of being used in free operational systems. Thus, the essential requirements for its operation are:</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: disc;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: circle;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts19">Linux OS</span><span class="rvts18"> (preferably Debian 8 [Jessie] or Ubuntu 16.04 LTS); </span><span class="rvts22">*</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts19">Chromium web browser (Google Chrome equivalent)</span><span class="rvts18"> installed; </span><span class="rvts22">**</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts19">Access to the internet </span><span class="rvts18">(preferably, cable internet access with connection speed of 100 Mbps or higher);</span></li>
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts19">Spreadsheet editor (Microsoft Excel or OpenOffice Calc)</span><span class="rvts18"> - for input file formatting and output file visualization.</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">In addition, it is necessary for the user to have basic knowledge of Linux command line basic operation.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">As SPGG is a Python3 programming language application, it works based on the following libraries, which are required for proper working: </span><span class="rvts23">os, sys, time, glob, socket, datetime, webbrowser, collections, urllib.request, json, xlrd, xlwt, xlutils, pyvirtualdisplay, selenium </span><span class="rvts18">and </span><span class="rvts23">PyQt5</span><span class="rvts18">.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts22">*</span><span class="rvts18"> If the user do not have the above mentioned operating system, it is recommended the installation of a virtual machine to run the application. It is suggested the virtual machine manager Oracle VM VirtualBox and a OSGeo-Live virtual machine (Ubuntu 16.04) or pure Ubuntu 16.04.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">A installation guide for installing the virtual machine manager and the virtual machine itself can be found at the following link: </span><a class="rvts24" href="https://live.osgeo.org/en/quickstart/virtualization_quickstart.html" target="_blank">OSGeo-Live Quickstart for Running in a Virtual Machine</a><span class="rvts18">.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts22">**</span><span class="rvts18"> There may be issues due to Chromium installation and its conflicts with Google Chrome. Please, refer to "</span><span class="rvts23">Troubleshooting</span><span class="rvts18">" at the main menu.</span></p>
+<p></p>
+<p class="rvps5"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="http://www.helpndoc.com">Free HTML Help documentation generator</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by Eurico Nicacio. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

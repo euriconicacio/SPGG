@@ -1,0 +1,191 @@
+﻿<html>
+	
+<head>
+	<title>SPGG Operation</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "SPGG 2.0 Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("SPGGOperation");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">SPGG Operation</h1>
+				
+				<div id="topic_breadcrumb">
+					<a href="GettingStarted.html">Getting Started</a> &rsaquo;&rsaquo; </div>
+				</div>
+			<div id="topic_header_nav">
+				<a href="GettingStarted.html"><img src="img/arrow_up.png" alt="Parent"/></a>
+				
+				<a href="OptionsandFeatures.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Inputfiletemplate.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><span class="rvts20">SPGG v2.0</span></p>
+<p class="rvps3"><span class="rvts21"><br/></span></p>
+<p class="rvps3"><span class="rvts21">Getting Started</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps3"><span class="rvts17">SPGG Operation</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">In this section, it is provided an example of SPGG operation, since the input file formatting up to the data extraction of the output file. For a general approach, check the video displayed at </span><a class="rvts24" href="http://www.cienciasgeodesicas.ufpr.br/spgg/video.html">this link</a><span class="rvts18">.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">Consider the following ten steps ahead, with the objective of </span><span class="rvts38">determining the geoid height of 3 known points, according to a pre-established model and its specifications</span><span class="rvts18">.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Data arrangement</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">Suppose that, as stated above, we wanto to determine de geoid height of 3 points. Our first task will be arranging their known positional data in any application, preparing to generate our input file. In this moment, we must perform this task according to the order and the number of columns that will be used by SPGG. In case of pre-arranged data, skip this step.</span></p>
+<p class="rvps8"><span class="rvts18">Figure 8 contains an examplo of data arrangement.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps10"><img width="486" height="254" alt="" style="padding : 1px;" src="lib/NewItem38.png"></p>
+<p class="rvps10"><span class="rvts34">Figure 8 - Data arrangement.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="2" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Input file formatting</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">Our next step is to format our data according to the stated in the "Input file template" section of this guide. The result is show in figure 9.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps10"><img width="562" height="354" alt="" style="padding : 1px;" src="lib/NewItem39.png"></p>
+<p class="rvps10"><span class="rvts34">Figure 9 - Formatted input file.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">Remember that it is necessary to save the input file in "</span><span class="rvts23">.xls</span><span class="rvts18">" format!</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="3" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Starting SPGG</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">Next, assuming that SPGG is already correctly installed, we should initialize it. Figure 10 contains a summary of its call and initial screen.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps10"><img width="623" height="506" alt="" style="padding : 1px;" src="lib/NewItem73.png"></p>
+<p class="rvps10"><span class="rvts34">Figura 10 - SPGG call and initial screen.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="4" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Parameters and truncation setting and points selection</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">Afterwise, we fill in all of the fields in SPGG, as stated in "Options and Features" section, in accordance with figure 11.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps13"><img width="617" height="443" alt="" style="padding : 1px;" src="lib/NewItem74.png"></p>
+<p class="rvps10"><span class="rvts34">Figure 11 - SPGG fields filled with wanted information.</span></p>
+<p class="rvps8"><span class="rvts34"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="5" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Connection test</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">After reaching this point, it is recommended that the user tests his internet connection. Such test is performed by clicking the "</span><span class="rvts23">Test Connection</span><span class="rvts18">" button, and its result is displayed in figure 12.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps13"><img width="613" height="442" alt="" style="padding : 1px;" src="lib/NewItem75.png"></p>
+<p class="rvps10"><span class="rvts34">Figure 12 - Positive result for internet connectivity test.</span></p>
+<p class="rvps8"><span class="rvts34"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="6" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Calculation beginning</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">In the sequence, the user must presse the "</span><span class="rvts23">Generate extracts</span><span class="rvts18">" button in order to, in fact, start the calculation.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="7" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">During the calculation</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">During the calculations, your screen may even get the "</span><span class="rvts23">No answer</span><span class="rvts18">" aspect, depending on you operation system. However, the calculation is being held, as it can be stated by the "</span><span class="rvts23">Processing</span><span class="rvts18">" group status in the application - show in figure 13.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps13"><img width="608" height="439" alt="" style="padding : 1px;" src="lib/NewItem76.png"></p>
+<p class="rvps10"><span class="rvts34">Figure 13 - Application during processing.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="8" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Calculation end</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">In the end of the calculation, a success alert is displayed, as shown in figure 14.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps13"><img width="586" height="421" alt="" style="padding : 1px;" src="lib/NewItem77.png"></p>
+<p class="rvps10"><span class="rvts34">Figure 14 - Calculation finished alert.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="9" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Opening the output file</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">The output file opening can be performed by pressing the "</span><span class="rvts23">Open results</span><span class="rvts18">" button, or searching it directly in the folder indicated in the "</span><span class="rvts23">Output file pattern</span><span class="rvts18">" section of this guide. A visualization of its opening is presented in figure 15.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps13"><img width="576" height="472" alt="" style="padding : 1px;" src="lib/NewItem78.png"></p>
+<p class="rvps10"><span class="rvts34">Figura 15 - Opening the output file.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="10" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Interpretation of output file</span></li>
+</ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18">An interpretation of the output file should be based on the "</span><span class="rvts23">Output file pattern</span><span class="rvts18">" section in this guide.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts27">In case of problems related to SPGG operation, please send and e-mail to </span><a class="rvts29" href="mailto:euriconicaciojr@gmail.com?subject=SPGG%20-%20Problema%20-%20Download%20e%20Instala&ccedil;&atilde;o">euriconicaciojr@gmail.com</a><span class="rvts27"> with the subject "</span><span class="rvts28">SPGG - Issue - SPGG Operation</span><span class="rvts27">".</span></p>
+<p></p>
+<p class="rvps5"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="http://www.helpndoc.com/feature-tour">Easily create Web Help sites</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by Eurico Nicacio. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+

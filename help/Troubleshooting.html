@@ -1,0 +1,167 @@
+﻿<html>
+	
+<head>
+	<title>Troubleshooting</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta name="generator" content="HelpNDoc Personal Edition 4.9.2.132">
+	<meta name="keywords" content="">
+	
+	<link type="text/css" rel="stylesheet" media="all" href="css/reset.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/base.css" />
+	<link type="text/css" rel="stylesheet" media="all" href="css/hnd.css" />
+	<!--[if lte IE 8]>
+		<link type="text/css" rel="stylesheet" media="all" href="css/ielte8.css" />
+	<![endif]-->
+	<style type="text/css">
+		#topic_header
+		{
+			background-color: #EFEFEF;
+		}
+	</style>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/hnd.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function()
+		{
+			if (top.frames.length == 0)
+			{
+				var sTopicUrl = top.location.href.substring(top.location.href.lastIndexOf("/") + 1, top.location.href.length);
+				top.location.href = "SPGG 2.0 Help.html?" + sTopicUrl;
+			}
+			else
+			{
+				var bTocSelected = false;
+				(function waitForTOC()
+				{
+					if (top && top.FrameTOC && top.FrameTOC.SelectTocItem)
+					{
+						top.FrameTOC.SelectTocItem("Troubleshooting");
+						bTocSelected = true;
+					}
+					if (!bTocSelected) setTimeout(function() { waitForTOC(); }, 300);
+				})();
+			}
+		});
+	</script>
+	
+	</head>
+
+<body>
+
+<div id="topic_header">
+			<div id="topic_header_content">
+				<h1 id="topic_header_text">Troubleshooting</h1>
+				
+				</div>
+			<div id="topic_header_nav">
+				<a href="Outputfilepattern.html"><img src="img/arrow_left.png" alt="Previous"/></a>
+				
+				<a href="Contact.html"><img src="img/arrow_right.png" alt="Next"/></a>
+				
+				</div>
+			<div class="clear"></div>
+		</div>
+	<div id="topic_content">
+		
+<p></p>
+<p class="rvps3"><span class="rvts20">SPGG v2.0</span></p>
+<p class="rvps3"><span class="rvts21"><br/></span></p>
+<p class="rvps3"><span class="rvts21">Troubleshooting</span></p>
+<p class="rvps3"><span class="rvts17"><br/></span></p>
+<p class="rvps3"><span class="rvts17">Collection of reported and solved issues</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18">The following are some issues that have been reported by users and their solutions.</span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts30">Issue #1</span><span class="rvts18">: Interrupted connection; lost of calculated points up to the interruption moment.</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Description</span><span class="rvts18">: during the calculation of several points, your internet connection is interrupted;</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Solution or recommendation</span><span class="rvts18">: unfortunatelly, the lack of internet connectivity during the application execution makes it fail and close. However, the calculated points up to that moment are not lost. In the folder where the </span><span class="rvts25">spgg2.tar.gz</span><span class="rvts18"> file was uncompressed, it is created a text file named </span><span class="rvts25">temp.txt</span><span class="rvts18">. This file contains a sort of log file of the calculated points, as displayed in figure 18. When the internet connection gets restablished, you can re-format your input file by excluding the already calculated points.</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps10"><img width="260" height="192" alt="" style="padding : 1px;" src="lib/NewItem47.png"></p>
+<p class="rvps10"><span class="rvts34">Figura 18 - Log file of the calculated points.</span></p>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts30">Issue #2</span><span class="rvts18">: Issues related to </span><span class="rvts23">xvfb</span><span class="rvts18"> installation.</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Description</span><span class="rvts18">: you do not have one of the packages necessary to run the application;</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Solution or recommendation</span><span class="rvts18">: it is necessary to install the missing package and you probably will need to check issue #3; follow these steps:</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Install xvfb latest version: </span><span class="rvts39">sudo apt-get install xvfb</span><span class="rvts18">.</span></li>
+</ol></ol></ol></ol>
+<p class="rvps8"><span class="rvts39"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts30">Issue #3</span><span class="rvts18">: Issues related to Chromium installation on Ubuntu.</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Description</span><span class="rvts18">: you have both Linux and Chromium installed in you PC; however, as you try starting SPGG, it informs that your internet connectivity is working, but the application suddenly closes during operation due to </span><span class="rvts23">Chromium driver</span><span class="rvts18"> issues;</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Solution or recommendation</span><span class="rvts18">: in some situations, </span><span class="rvts23">Chromium web browser</span><span class="rvts18"> installation is not followed by proper installation of </span><span class="rvts23">ChromeDriver</span><span class="rvts18">, which is also necessary for this application execution. It is recommended the access to </span><a class="rvts24" href="https://christopher.su/2015/selenium-chromedriver-ubuntu/" target="_blank">this link</a><span class="rvts18"> to ensure the correct installation of both. If you prefer, follow this step-by-step in Linux command line: </span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Check if you have the latest version of Chromium web browser installed: &nbsp;</span><span class="rvts39">chromium-browser -version</span></li>
+<li value="2" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">In case negative, install Chromium latest version: </span><span class="rvts39">sudo apt-get install chromium-browser</span></li>
+<li value="3" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Download the ChromeDriver version more appropriate to your OS </span><a class="rvts24" href="http://chromedriver.storage.googleapis.com/index.html" target="_blank">here</a><span class="rvts18">.</span></li>
+<li value="4" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Uncompress the chromedriver.zip file.</span></li>
+<li value="5" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Move the uncompressed file to the </span><span class="rvts39">/usr/bin</span><span class="rvts18"> folder with the command </span><span class="rvts39">sudo mv chromedriver /usr/bin</span></li>
+<li value="6" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Go to the </span><span class="rvts39">/usr/bin</span><span class="rvts18"> folder and change the file permissions with a command equivalent to </span><span class="rvts39">chmod a+x chromedriver</span></li>
+<li value="7" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Save your work in other applications, restart you system em run SPGG again.</span></li>
+</ol></ol></ol></ol>
+<p class="rvps8"><span class="rvts39"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts30">Issue #4</span><span class="rvts18">: Issues related to incompatibility between Google Chrome and Chromium Web Browser on Ubuntu.</span></li>
+</ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Description</span><span class="rvts18">: you have Linux, Chromium and Google Chrome (from other Linux distributions) installed in your PC; when you try to run SPGG, you face an error that ends similarly to the following: </span><span class="rvts39">http.client.RemoteDisconnected: Remote end closed connection without response</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Solution or recommendation</span><span class="rvts18">: this issue happens due to an incompatibility between Google Chrome itself of other Linux distributions and the Chromium Browser. You must uninstall the existing versions of Google Chrome, as follows:</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ol style="text-indent: 0px; margin-left: 24px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;"><ol style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: decimal;">
+<li value="1" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Uninstall Chrome stable version, if there is one: </span><span class="rvts39">sudo apt-get remove google-chrome-stable</span></li>
+<li value="2" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Uninstall Chrome unstable version, if there is one: </span><span class="rvts39">sudo apt-get remove google-chrome-unstable</span></li>
+<li value="3" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Uninstall Chrome beta version, if there is one: </span><span class="rvts39">sudo apt-get remove google-chrome-beta</span></li>
+<li value="4" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Remove spare packages automatically installed, as followed: </span><span class="rvts39">sudo apt-get autoremove</span><span class="rvts18">f (be careful performing this action if working with Debian-based distributions of Linux);</span></li>
+<li value="5" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Update the packages list, as follows: </span><span class="rvts39">sudo apt-get update</span></li>
+<li value="6" style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts18">Run SPGG again.</span></li>
+</ol></ol></ol></ol>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<ul style="text-indent: 0px; margin-left: 24px; list-style-position: outside;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: square;"><ul style="text-indent: 0px; margin-left: 48px; list-style-position: outside; list-style-type: disc;">
+<li style="margin-left: 0px; text-indent: 0px" class="rvps8"><span class="rvts38">Observation</span><span class="rvts18">: special acknowlegment to Mr. José Carrión by his support on identifying and reporting this issue.</span></li>
+</ul></ul></ul>
+<p class="rvps8"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts18"><br/></span></p>
+<p class="rvps7"><span class="rvts27">In case of problems with unsolved issues, please send and e-mail to </span><a class="rvts29" href="mailto:euriconicaciojr@gmail.com?subject=SPGG%20-%20Problema%20-%20Download%20e%20Instala&ccedil;&atilde;o">euriconicaciojr@gmail.com</a><span class="rvts27"> with the subject "</span><span class="rvts28">SPGG - Issue - Unsolved issue</span><span class="rvts27">". Your question can help hundreds of people!</span></p>
+<p></p>
+<p class="rvps5"><span class="rvts15">Created with the Personal Edition of HelpNDoc: </span><a class="rvts16" href="http://www.helpndoc.com">Easy CHM and documentation editor</a></p>
+</div>
+	
+	<div id="topic_footer">
+
+			<div id="topic_footer_content">
+				Copyright &copy; 2017 by Eurico Nicacio. All Rights Reserved.</div>
+		</div>
+	</body>
+	
+</html>
+
