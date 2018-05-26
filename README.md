@@ -6,7 +6,7 @@ SPGG is a standalone application that enables the user to generate multiple poin
 
 Brief requirements: see [REQUIREMENTS.md](https://github.com/euriconicacio/SPGG/blob/master/requirements.md).
 
-Futher information: visit http://github.com/euriconicacio/euriconicacio.github.io
+Futher information: visit https://pixeel.me/SPGG
 
 ## Contributing
 
